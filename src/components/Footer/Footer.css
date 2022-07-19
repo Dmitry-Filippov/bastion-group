@@ -1,0 +1,8 @@
+.footer {
+  min-height: 358px;
+  width: 1440px;
+  margin: 40px auto 0 auto;
+  background-image: url("../../imgs/футер.png");
+  background-position: center;
+  background-size: cover;
+}
