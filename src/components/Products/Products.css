@@ -1,0 +1,59 @@
+.products {
+  padding: 50px 0;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.products__title {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #000000;
+}
+
+.products__form {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.products__input {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.009em;
+  padding: 3px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.products__select {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.009em;
+  background: none;
+  background-image: url("../../imgs/down1.svg");
+  background-repeat: no-repeat;
+  background-position:right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 3px;
+  border-bottom: 1px solid #e6e6e6;
+  min-width: 80px;
+}
+
+.products__submit {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.009em;
+  color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #c93e33;
+  border-radius: 4px;
+}

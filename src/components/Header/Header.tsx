@@ -7,10 +7,10 @@ const Header = () => {
       <div className="header__upperline">
         <div className="header__content">
           <nav className="header__nav">
-            <Link to="/" className="header__link">
+            <Link to="/types" className="header__link">
               Типы продуктов
             </Link>
-            <Link to="/" className="header__link">
+            <Link to="/products" className="header__link">
               Продукты
             </Link>
           </nav>
