@@ -7,6 +7,9 @@ const Header = () => {
       <div className="header__upperline">
         <div className="header__content">
           <nav className="header__nav">
+          <Link to="/" className="header__link">
+              Главная
+            </Link>
             <Link to="/types" className="header__link">
               Типы продуктов
             </Link>

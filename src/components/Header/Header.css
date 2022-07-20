@@ -17,10 +17,11 @@
   letter-spacing: 0.009em;
   color: #000000;
   text-decoration: none;
+  margin-left: 50px;
 }
 
-.header__link:last-of-type {
-  margin-left: 50px;
+.header__link:first-of-type {
+  margin-left: 0px;
 }
 
 .header__contacts {
