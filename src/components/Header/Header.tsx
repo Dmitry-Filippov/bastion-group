@@ -61,9 +61,9 @@ const Header = () => {
               <p className="header__icon-text">Избранное</p>
             </li>
             <li>
-              <div className="header__shop-icon">
+              <Link className="header__shop-icon" to="/cart">
                 <p className="header__shop-count">2</p>
-              </div>
+              </Link>
               <p className="header__icon-text">Корзина</p>
             </li>
           </ul>

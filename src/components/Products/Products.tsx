@@ -19,7 +19,11 @@ const Products = () => {
 
   function handleFormSubmit(e: any) {
     e.preventDefault();
-    dispatch(addProduct({ id, name, selectValue, price, gost }));
+    const isHit: boolean = name.toLowerCase().includes("о");
+    const isAction: boolean = name.toLowerCase().includes("а");
+    dispatch(
+      addProduct({ id, name, type: selectValue, price, gost, isHit, isAction })
+    );
     setId("");
     setName("");
     setPrice("");
