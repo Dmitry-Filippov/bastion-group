@@ -36,6 +36,8 @@ const Main = () => {
               {productsState.map((item) => {
                 return (
                   <CardItem
+                    key={item.id}
+                    id={item.id}
                     name={item.name}
                     gost={item.gost}
                     price={item.price}
@@ -44,13 +46,6 @@ const Main = () => {
                   />
                 );
               })}
-              {/* <CardItem/>
-              <CardItem/>
-              <CardItem/>
-              <CardItem/>
-              <CardItem/>
-              <CardItem/>
-              <CardItem/> */}
             </ul>
           </div>
         </div>

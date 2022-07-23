@@ -1,6 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = [
+  {
+    id: "1",
+    name: "Шланги",
+  },
+  {
+    id: "2",
+    name: "Трубы",
+  },
+];
 
 export const typesSlice = createSlice({
   name: "types",

@@ -1,13 +1,26 @@
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { RootState } from "../../redux/store/store";
 import "./Header.css";
 
 const Header = () => {
+  const [cartCount, setCartCount] = useState<number>(0);
+  const cartItems = useSelector((state: RootState) => state.cart);
+  useEffect(() => {
+    let count: number = 0;
+    cartItems.forEach((item) => {
+      count += item.howMany;
+    });
+    setCartCount(count);
+  }, [cartItems]);
+
   return (
     <header className="header">
       <div className="header__upperline">
         <div className="header__content">
           <nav className="header__nav">
-          <Link to="/" className="header__link">
+            <Link to="/" className="header__link">
               Главная
             </Link>
             <Link to="/types" className="header__link">
@@ -62,7 +75,7 @@ const Header = () => {
             </li>
             <li>
               <Link className="header__shop-icon" to="/cart">
-                <p className="header__shop-count">2</p>
+                <p className="header__shop-count">{cartCount}</p>
               </Link>
               <p className="header__icon-text">Корзина</p>
             </li>
@@ -72,11 +85,11 @@ const Header = () => {
       <div className="header__underline">
         <div className="header__content">
           <nav className="header__under-nav">
-          <p className="header__nav-text">Главная</p>
-          <div className="header__breaker"></div>
-          <p className="header__nav-text">Интернет-магазин</p>
-          <div className="header__breaker"></div>
-          <p className="header__nav-text">Опоры трубопроводов</p>
+            <p className="header__nav-text">Главная</p>
+            <div className="header__breaker"></div>
+            <p className="header__nav-text">Интернет-магазин</p>
+            <div className="header__breaker"></div>
+            <p className="header__nav-text">Опоры трубопроводов</p>
           </nav>
         </div>
       </div>

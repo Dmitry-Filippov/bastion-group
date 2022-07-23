@@ -1,16 +1,24 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import img from "../../imgs/заглушка.png";
+import { addItemToCart } from "../../redux/features/cart/cartSplice";
 
 type props = {
   name: string;
   gost: string;
   price: string;
+  id: string;
   isHit: boolean;
   isAction: boolean;
 };
 
-const CardItem = ({ name, gost, isHit, isAction, price }: props) => {
+const CardItem = ({ name, gost, isHit, isAction, price, id }: props) => {
   const [count, setCount] = useState<number>(1);
+  const dispatch = useDispatch();
+
+  function handleAddToCartClick() {
+    dispatch(addItemToCart({ name, gost, id, price, howMany:count }));
+  }
 
   return (
     <li className="cards__card-item">
@@ -18,15 +26,13 @@ const CardItem = ({ name, gost, isHit, isAction, price }: props) => {
         {isHit ? (
           <li className="cards__action cards__action_type_hit">Хит</li>
         ) : (
-          <li></li>
+          <div></div>
         )}
         {isAction ? (
           <li className="cards__action cards__action_type_action">Акция</li>
         ) : (
           <li></li>
         )}
-        {/* <li className="cards__action cards__action_type_hit">Хит</li> */}
-        {/* <li className="cards__action cards__action_type_action">Акция</li> */}
       </ul>
       <img src={img} alt="фото товара" className="cards__card-img" />
       <p className="cards__card-item-gost">ГОСТ {gost}</p>
@@ -41,7 +47,7 @@ const CardItem = ({ name, gost, isHit, isAction, price }: props) => {
           </button>
         </div>
       </div>
-      <button className="cards__to-cart-btn">
+      <button className="cards__to-cart-btn" onClick={handleAddToCartClick}>
         <div></div> <p>В корзину</p>
       </button>
       <button className="cards__about-btn">Подробнее</button>
